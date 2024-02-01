@@ -59,6 +59,29 @@
         </div>
         <hr>
     </div>
+    <br>
+    <h5>Personal Details </h5>
+    <br>
+    <div class="row">
+        <div class="col-8 row form-group">
+            <div class="col-6 row"><label for="pname" class="form-label col-4">Name : </label><div class="col mb-3"><input type="text" class="form-control " id="pname" placeholder="FirstName"> <input type="text" class="form-control " id="mname" placeholder="Middle Name[optional]"><input type="text" id="lname" class="form-control " placeholder="LastName [optional]"><span id="ipname" class="text-danger"></span></div></div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-8 row">
+            <div class="col-6 row"><label for="p.age" class="form-label col-4">Age : </label><div class="col mb-3"><input type="text" class="form-control " id="p.age" placeholder="Age"><span id="iage" class="text-danger"></span></div></div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-8 row">
+            <div class="col-6 row"><label for="pan" class="form-label col-4">Pan Number : </label><div class="col mb-3"><input type="text" class="form-control " id="pan" placeholder="Pan Number"><span id="ipan" class="text-danger"></span></div></div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-8 row">
+            <div class="col-6 row"><label for="addres" class="form-label col-4">Address : </label><div class="col mb-3"><input type="text" class="form-control " id="addres" placeholder="Address"><span id="iaddres" class="text-danger"></span></div></div>
+        </div>
+    </div>
 <br>
 <div class="text-center row">
     <button class="btn btn-outline-dark ms-auto me-auto col-2" onclick="addData()" id="add">AddData</button>
@@ -75,8 +98,11 @@
                 <thead>
                     <tr>
                         <th>NAME</th>
-                        <th>SECURITY QUESTION</th>
+                        <th>AGE</th>
+                        <th>ADDRESS</th>
+                        <th>PAN NUMBER</th>
                         <th>LANGUAGE</th>
+                        <th>SECURITY QUESTION</th>
                         <th>ACTIONS</th>
                     </tr>
                 </thead>

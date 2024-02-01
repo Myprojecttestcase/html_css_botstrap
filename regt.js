@@ -1,4 +1,7 @@
 function vald(){
+    var ptest=document.getElementById('pname').value;
+    var atest=document.getElementById('p.age').value;
+    var pantest=document.getElementById('pan').value;
     if(document.getElementById('name').value==""){
         document.getElementById('iname').innerHTML="Username is required * ";
         return false;
@@ -40,6 +43,44 @@ function vald(){
     }else{
         document.getElementById('plvify').innerHTML="";
     }
+    if(document.getElementById('pname').value==""){
+        document.getElementById('ipname').innerHTML="person name is required * ";
+        return false;
+    }
+    else if(!(/^[a-z A-Z]+$/).test(ptest)){
+        document.getElementById('ipname').innerHTML="Name should be A-Z and a-z";
+        return false;
+    }
+    else{
+        document.getElementById('ipname').innerHTML="";
+    }
+    if(document.getElementById('p.age').value==""){
+        document.getElementById('iage').innerHTML="AGE is required * ";
+        return false;
+    }else if(Number(atest)>=150||Number(atest)<=0){
+        document.getElementById('iage').innerHTML="Age should between 0-150";
+        return false;
+    }
+    else{
+        document.getElementById('iage').innerHTML="";
+    }
+    if(document.getElementById('pan').value==""){
+        document.getElementById('ipan').innerHTML="Pan number is required * ";
+        return false;
+    } else if(!(/^[A-Z]{5,5}[0-9]{4,4}[A-Z]{1,1}$/).test(pantest)){
+        document.getElementById('ipan').innerHTML="pan should be five character four number and one charecter and all must in uppercase";
+        return false;
+    }
+    else{
+        document.getElementById('ipan').innerHTML="";
+    }
+    if(document.getElementById('addres').value==""){
+        document.getElementById('iaddres').innerHTML="Address is required * ";
+        return false;
+    }else{
+        document.getElementById('iaddres').innerHTML="";
+    }
+    
    return true; 
 }
 function addData(){
@@ -51,6 +92,12 @@ function addData(){
     var pass=document.getElementById('pass').value;
     var cpass=document.getElementById('cpass').value;
     var sqa=document.getElementById('sqa').value;
+    var pname=document.getElementById('pname').value;
+    var mname=document.getElementById('mname').value;
+    var lname=document.getElementById('lname').value;
+    var peage=document.getElementById('p.age').value;
+    var addres=document.getElementById('addres').value;
+    var pan=document.getElementById('pan').value;
     
         var slist="";
         if (localStorage.getItem("task")==null) {
@@ -66,6 +113,12 @@ function addData(){
             pass:pass,
             sqa:sqa,
             cpass:cpass,
+            pname:pname,
+            lname:lname,
+            mname:mname,
+            peage:peage,
+            addres:addres,
+            pan:pan,
         });
         localStorage.setItem("task",JSON.stringify(slist));
         sdata();
@@ -84,7 +137,7 @@ function sdata(){
         }
         var html ="";
         slist.forEach((element,index)=>{
-            html+="<tr><td>"+element.name+"</td><td>"+element.sq+"</td><td>"+element.lang+"</td>";
+            html+="<tr><td>"+element.pname+"</td><td>"+element.peage+"</td><td>"+element.addres+"</td><td>"+element.pan+"</td><td>"+element.lang+"</td><td>"+element.sqa+"</td>";
             html += '<td> <button class="btn btn-outline-dark" onclick="dData(' + index + ')">DELETE</button><button class="btn btn-outline-dark" onclick="uData(' + index + ')">EDIT</button></td>'
             html += "</tr>";
         });
@@ -95,6 +148,13 @@ function sdata(){
         document.getElementById('pass').value="";
         document.getElementById('cpass').value="";
         document.getElementById('sqa').value="";
+        document.getElementById('pname').value="";
+        document.getElementById('mname').value="";
+        document.getElementById('lname').value="";
+        document.getElementById('p.age').value="";
+        document.getElementById('addres').value="";
+        document.getElementById('pan').value="";
+        
         
         
 }
@@ -125,6 +185,14 @@ function uData(index) {
     document.getElementById('sq').value=slist[index].sq;
     document.getElementById('sqa').value=slist[index].sqa;
     document.getElementById('plang').value=slist[index].lang;
+    document.getElementById('pname').value=slist[index].pname;
+    document.getElementById('mname').value=slist[index].mname;
+    document.getElementById('lname').value=slist[index].lname;
+    document.getElementById('p.age').value=slist[index].peage;
+    document.getElementById('addres').value=slist[index].addres;
+    document.getElementById('pass').placeholder="Set Password";
+    document.getElementById('cpass').placeholder="Confirm Password";
+    document.getElementById('pan').value=slist[index].pan;
     document.getElementById('add').style.display='none';
     document.getElementById('update').style.display='block';
     document.getElementById('update').onclick=function (){
@@ -134,10 +202,15 @@ function uData(index) {
         slist[index].sqa=document.getElementById('sqa').value;
         slist[index].sq=document.getElementById('sq').value;
         slist[index].lang=document.getElementById('plang').value;
+        slist[index].pname=document.getElementById('pname').value;
+        slist[index].peage=document.getElementById('p.age').value;
+        slist[index].addres=document.getElementById('addres').value;
+        slist[index].pan=document.getElementById('pan').value;
         if(vald()){
         localStorage.setItem("task", JSON.stringify(slist));
         sdata();
         document.getElementById('add').style.display='block';
     document.getElementById('update').style.display='none';}
     }
+    
 }
