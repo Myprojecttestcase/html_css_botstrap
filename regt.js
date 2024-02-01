@@ -1,6 +1,6 @@
 function vald(){
     var ptest=document.getElementById('pname').value;var patest=document.getElementById('pass').value;
-    var atest=document.getElementById('p.age').value;
+    var atest =(document.getElementById('p.age').value).replace(/[^0-9]/g,"");
     var pantest=document.getElementById('pan').value;
     if(document.getElementById('name').value==""){
         document.getElementById('iname').innerHTML="Username is required * ";
@@ -61,7 +61,8 @@ function vald(){
     if(document.getElementById('p.age').value==""){
         document.getElementById('iage').innerHTML="AGE is required * ";
         return false;
-    }else if(Number(atest)>=150||Number(atest)<=0){
+    }else if(Number(atest)>=150||Number(atest)<=0||atest===null){
+        
         document.getElementById('iage').innerHTML="Age should between 0-150";
         return false;
     }
@@ -99,10 +100,10 @@ function addData(){
     var pname=document.getElementById('pname').value;
     var mname=document.getElementById('mname').value;
     var lname=document.getElementById('lname').value;
-    var peage=document.getElementById('p.age').value;
     var addres=document.getElementById('addres').value;
     var pan=document.getElementById('pan').value;
-    
+    var l =document.getElementById('p.age').value;
+    var peage=l.replace(/[^0-9]/g, "");
         var slist="";
         if (localStorage.getItem("task")==null) {
             slist=[];
@@ -207,7 +208,7 @@ function uData(index) {
         slist[index].sq=document.getElementById('sq').value;
         slist[index].lang=document.getElementById('plang').value;
         slist[index].pname=document.getElementById('pname').value;
-        slist[index].peage=document.getElementById('p.age').value;
+        slist[index].peage=(document.getElementById('p.age').value).replace(/[^0-9]/g,"");
         slist[index].addres=document.getElementById('addres').value;
         slist[index].pan=document.getElementById('pan').value;
         if(vald()){
