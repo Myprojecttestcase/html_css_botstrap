@@ -1,5 +1,5 @@
 function vald(){
-    var ptest=document.getElementById('pname').value;
+    var ptest=document.getElementById('pname').value;var patest=document.getElementById('pass').value;
     var atest=document.getElementById('p.age').value;
     var pantest=document.getElementById('pan').value;
     if(document.getElementById('name').value==""){
@@ -11,7 +11,11 @@ function vald(){
     if(document.getElementById('pass').value==""){
         document.getElementById('ipass').innerHTML="Password is required * ";
         return false;
-    }else{
+    }else if(!(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]).{8,}$/).test(patest)){
+        document.getElementById('ipass').innerHTML="Number should be 1 uppercase and atleast 1 number and 8 charecter";
+        return false;
+    }
+    else{
         document.getElementById('ipass').innerHTML="";
     }
     if(document.getElementById('cpass').value==""){
