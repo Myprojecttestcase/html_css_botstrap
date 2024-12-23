@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zealous Navigation</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .container
+        {
+            min-width: 500px;
+            background-color: rgb(70, 60, 35);
+            color: whitesmoke;
+            padding: 15px 0px;
+            font-family: Arial,sans-serif;
+            /* filter: invert(1); */
+        }
+        .wrapper
+        {
+           
+            display: flex;
+            justify-content: space-between;
+            gap: 2;
+            border: 1px solid red;
+            padding: 10px;
+            margin: 0px;
+        }
+        .child1
+        {
+            
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 2px 10px;
+            align-items:center;
+        }
+        .child2
+        {
+            background-color: blue;
+            color: white;
+            padding: 10px 10px;
+            font-weight: bold;
+            border: 1px solid white ;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="child1">
+                <img src="../HTML/images/name logo.png" alt="Zealous" width="100px" height="25px" />
+                <nav>
+                    <a href="">HOME</a>
+                    <a href="">WEB APPS</a>
+                    <a href="">MY TRANING</a>
+                    <a href="">ABOUT</a>
+                    <a href="">CONTACT </a>
+                </nav>
+            </div>
+            <div class="child2">
+                <a href="https://zealous.co/help/docs/account/logging-in/logging-in/" type="button">LOG IN</a>
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function vald(){
+            let a=document.forms['vale'].adh.value;
+            alert((/^[0-9]{3,3}[@ \s]{0,1}[0-9]{4,4}[@ \s]{0,1}[0-9]{4,4}$/).test(a));
+        }
+    </script>
+    <form name="vale">
+        <input type="text" name="adh">
+        <button class="btn" onclick="vald()">Reg</button>
+    </form>
+</body>
+</html>
