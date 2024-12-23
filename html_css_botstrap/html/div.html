@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ma{
+            background-color: violet;
+            height: 400px;
+            width: 1200px;
+            display: flex;
+            
+            justify-content: space-evenly;
+            /* overflow: scroll; */
+            /* align-items: stretch; */
+            align-items: center;
+           
+        }
+        .bo{
+            flex-shrink: 1;
+            flex-grow: 1;
+        background-color: aqua;
+        height: 40px;
+        text-align: center;
+        width: 40px;
+        border: 1px solid rgb(0, 0, 0);    
+        }
+        .b1{
+            /* animation: both;
+            transform: rotate('180'); */line-height: 10px;
+        }
+        .b1:hover{
+            transition-duration: 3s;
+            background-color: burlywood;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 1000px; width: auto; background-color: brown;">
+    <div class="ma">
+        <div class="b1 bo">1</div>
+        <div class="b2 bo">2</div>
+        <div class="b3 bo">3</div>
+        <div class="b4 bo">4</div>
+    </div>
+    </div>
+</body>
+</html>
